@@ -1,4 +1,4 @@
-name: Testes Playwright Manuais
+name: Testes Playwright
 
 on:
   workflow_dispatch: # Habilita o botão "Run workflow"
