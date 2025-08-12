@@ -1,0 +1,26 @@
+name: Testes Playwright
+
+on:
+  workflow_dispatch: # Habilita o botão "Run workflow"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Instalar browsers do Playwright
+        run: npx playwright install
+
+      - name: Rodar testes Playwright
+        run: npx playwright test
